@@ -34,4 +34,4 @@ class Movies(Resource):
 api.add_resource(Movies, '/api/v1/movie')
 
 if __name__ == '__main__':
-    app.run()  # run our Flask app
+    app.run(host='0.0.0.0')  # run our Flask app
