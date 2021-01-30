@@ -17,7 +17,6 @@ load_dotenv(envars)
 
 url = os.getenv("PLEX_URL")
 token =  os.getenv("PLEX_TOKEN")
-SECRET_KEY = os.getenv("EMAIL")
 plex = PlexServer(url,token)
 
 app = Flask(__name__)
