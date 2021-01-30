@@ -3,17 +3,22 @@
 
 from flask import Flask
 from flask_restful import Resource, Api, reqparse
-import json 
-# import pandas as pd
-# import astapp 
-
+import json , os
+from pathlib import Path
+from dotenv import load_dotenv,dotenv_values
 from plexapi.server import PlexServer
-
 import random
 
-baseurl = 'http://192.168.1.4:32400'
-token = 'sbn7nRHCfJNzA6djb8Ji'
-plex = PlexServer(baseurl, token)
+basepath = Path()
+basedir = str(basepath.cwd())
+envars = basepath.cwd() / 'PRIVATE.env'
+load_dotenv(envars)
+
+
+url = os.getenv("PLEX_URL")
+token =  os.getenv("PLEX_TOKEN")
+SECRET_KEY = os.getenv("EMAIL")
+plex = PlexServer(url,token)
 
 app = Flask(__name__)
 api = Api(app)
