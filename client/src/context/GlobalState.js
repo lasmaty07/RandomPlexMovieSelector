@@ -19,7 +19,7 @@ export const GlobalProvider = ({ children }) => {
   // Actions
   async function getMovie() {
     try {
-      const res = await axios.get('/api/v1/movie');
+      const res = await axios.get('http://192.168.1.6:5000/api/v1/movie', { crossdomain: true });
 
       dispatch({
         type: 'GET_MOVIE',

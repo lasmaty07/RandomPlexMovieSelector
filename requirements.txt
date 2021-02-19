@@ -2,3 +2,4 @@ Flask==1.1.2
 Flask-RESTful==0.3.8
 python-dotenv==0.15.0
 PlexAPI==4.3.0
+Flask-Cors==1.10.3
